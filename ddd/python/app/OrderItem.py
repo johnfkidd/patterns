@@ -49,12 +49,5 @@ class OrderItem:
         self.price = create_price(price)
         self.discount = create_discount(discount)
 
-    def __call__(self):
-        return {
-            "order_item_id": self.order_item_id(),
-            "price": self.price(),
-            "discount": self.discount()
-        }
-
     def total_price(self):
         return self.price() - self.discount()
